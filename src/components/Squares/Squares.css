@@ -1,0 +1,33 @@
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--fnt-sz) * 3);
+  font-family: var(--fnt-play);
+  font-weight: 700;
+}
+
+.border {
+  width: var(--sz);
+  height: var(--sz);
+  padding: var(--pd);
+  border: .35vmin solid var(--base-color);
+  border-radius: .15rem;
+
+  &:first-child,
+  &:nth-child(2),
+  &:nth-child(3) { border-top: none; }
+  
+  &:nth-child(3n + 1) { border-left: none; }
+  &:nth-child(3n + 3) { border-right: none; }
+
+  &:nth-child(7),
+  &:nth-child(8),
+  &:last-child { border-bottom: none; }
+}

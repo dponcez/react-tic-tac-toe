@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--svh);
+  position: relative;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2rem;
+    .heading {
+      font: 500 calc(var(--fnt-sz) * 2.5) var(--fnt-play);
+      text-transform: capitalize;
+    }
+  }
+
+  .grid {
+    --gap: .125rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+}
