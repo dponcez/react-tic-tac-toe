@@ -1,0 +1,50 @@
+:root {
+    --base-color: hsl(225, 35%, 9%);
+    --font-color: hsl(210, 10%, 96%);
+    --pd: 1.5rem;
+    --fnt-play: 'Play', sans-serif;
+    --fnt-abel: 'Abel', sans-serif;
+    --unit: 50;
+    --fnt-sz: calc((var(--unit) / 15) * 1vmin);
+
+    --sz: 6rem;
+    --svh: 100svh;
+}
+
+*,
+*::after,
+*::before { box-sizing: border-box; }
+
+h1,
+p {
+  font-size: initial;
+  overflow-wrap: break-word;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reset margin */
+html,
+body { margin: 0; }
+
+body {
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+}
