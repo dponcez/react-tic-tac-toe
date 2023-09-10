@@ -31,7 +31,9 @@ const Board = ({xIsNext, squares, onPlay}) => {
       <header className='header'>
         <h1 className='heading'>tic tac toe</h1>
       </header>
-      <p className='status'>{status}</p>
+      <div className='status'>
+        <p className='info'>{status}</p>
+      </div>
       <div className='grid'>
         {indices.map(index => (
           <Squares

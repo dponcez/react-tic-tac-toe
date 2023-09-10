@@ -18,6 +18,11 @@
     }
   }
 
+  .status {
+    padding-block-end: 2rem;
+    .info { font: 400 var(--pd) var(--fnt-abel) }
+  }
+
   .grid {
     --gap: .125rem;
     display: grid;
