@@ -1,0 +1,28 @@
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50rem;
+  margin: auto;
+
+  .game--list {
+    width: 15rem;
+    height: 10rem;
+    overflow: auto;
+  }
+}
+
+.jump {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11rem;
+  height: 2rem;
+  padding: var(--pd);
+  margin: .2rem 0;
+  font: 400 1rem var(--fnt-abel);
+  background-color: hsl(15.92deg 76.59% 34.86%);
+  color: var(--font-color);
+  border-radius: .25rem;
+  letter-spacing: .05rem;
+}
