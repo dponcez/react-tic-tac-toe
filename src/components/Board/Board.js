@@ -12,23 +12,31 @@ const Board = ({xIsNext, squares, onPlay}) => {
     const nextSquare = squares.slice()
 
     xIsNext ? 
-      (nextSquare[i] === 'X') :
-      (nextSquare[i] === 'O');
+      (nextSquare[i] = 'X') :
+      (nextSquare[i] = 'O');
 
       onPlay(nextSquare)
   }
+
+  const winner = checkWinner(squares)
+
+  let status;
+
+  winner ?
+    (status = `Winner: ${winner}`) :
+    (status = `Next player: ${xIsNext ? 'X' : 'O'}`)
 
   return (
     <div className='container'>
       <header className='header'>
         <h1 className='heading'>tic tac toe</h1>
       </header>
-      <p className='status'></p>
+      <p className='status'>{status}</p>
       <div className='grid'>
-        {indices.map((index, id) => (
+        {indices.map(index => (
           <Squares
-            key={id} 
-            value={(squares[index])}
+            key={index} 
+            value={squares[index]}
             onClick={() => handleClick(index)}
           />
         ))}
