@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Board } from '../Board/Board';
-import { Button  } from '../Button/Button'
+import { Button  } from '../Button/Button';
+import './Game.css';
 
 const Game = () => {
   const spaces = [Array(9).fill(null)]
@@ -10,7 +11,7 @@ const Game = () => {
   const currentSquares = history[currentIndex];
 
   const handlePlay = (nextSquare) => {
-    const nextHistory = [...history.slice(0, currentSquares + 1), nextSquare];
+    const nextHistory = [...history.slice(0, currentIndex + 1), nextSquare];
     setHistory(nextHistory)
     setCurrentIndex(nextHistory.length - 1);
   }
