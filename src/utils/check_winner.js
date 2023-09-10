@@ -12,10 +12,9 @@ export const checkWinner = (squares) => {
 
   for(const line of lines){
     const [a, b, c] = line;
-    if(
-        squares[a] && 
-        squares[a] === squares[b] && 
-        squares[a] === squares[c]
+    if( squares[a] && 
+        (squares[a] === squares[b] && 
+        squares[a] === squares[c])
       ) return squares[a, b, c]
   }
 
