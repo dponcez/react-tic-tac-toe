@@ -1,11 +1,29 @@
 .game {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 50rem;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+  place-items: center;
+  gap: .2rem;
+  height: var(--svh);
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .heading {
+      font: 500 calc(var(--fnt-sz) * 2.5) var(--fnt-play);
+      text-transform: capitalize;
+    }
+  }
+
+  .game--board,
+  .game--list { grid-row: 2; }
+
+  .game--board { grid-column: 1; }
 
   .game--list {
+    grid-column: 2;
     width: 15rem;
     height: 10rem;
     overflow: auto;
