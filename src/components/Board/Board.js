@@ -28,9 +28,6 @@ const Board = ({xIsNext, squares, onPlay}) => {
 
   return (
     <div className='container'>
-      <header className='header'>
-        <h1 className='heading'>tic tac toe</h1>
-      </header>
       <div className='status'>
         <p className='info'>{status}</p>
       </div>
