@@ -38,6 +38,9 @@ const Game = () => {
 
   return (
     <div className='game'>
+      <header className='header'>
+        <h1 className='heading'>tic tac toe</h1>
+      </header>
       <div className='game--board'>
         <Board
           xIsNext={xIsNext}
