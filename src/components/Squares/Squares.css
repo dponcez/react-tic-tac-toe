@@ -8,14 +8,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(var(--fnt-sz) * 3);
+  font-size: calc(var(--fnt-sz) * 5);
   font-family: var(--fnt-play);
   font-weight: 700;
 }
 
 .border {
-  width: var(--sz);
-  height: var(--sz);
+  width: calc(var(--sz) * 1.15);
+  height: calc(var(--sz) * 1.15);
   padding: var(--pd);
   border: .35vmin solid var(--base-color);
   border-radius: .15rem;
@@ -30,4 +30,12 @@ button {
   &:nth-child(7),
   &:nth-child(8),
   &:last-child { border-bottom: none; }
+}
+
+@media screen and (max-width: 930px){
+  .btn { font-size: clamp(2vmin, 5vmin, calc(var(--fnt-sz) * 4)); }
+  .border {
+    width: clamp(12vmin, 5vmin, calc(var(--sz) * 3));
+    height: clamp(12vmin, 5vmin, calc(var(--sz) * 3));
+  }
 }

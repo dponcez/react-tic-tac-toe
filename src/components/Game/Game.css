@@ -1,6 +1,6 @@
 .game {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   place-items: center;
   gap: .2rem;
   height: var(--svh);
@@ -24,23 +24,41 @@
 
   .game--list {
     grid-column: 2;
-    width: 15rem;
-    height: 10rem;
+    width: 18rem;
+    height: 16rem;
     overflow: auto;
+    .jump {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 12em;
+      height: 2rem;
+      padding: var(--pd);
+      margin: .2rem 0;
+      font: 400 1.125rem var(--fnt-abel);
+      background-color: hsl(15.92deg 76.59% 34.86%);
+      color: var(--font-color);
+      border-radius: .25rem;
+      letter-spacing: .05rem;
+    }
   }
 }
 
-.jump {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 11rem;
-  height: 2rem;
-  padding: var(--pd);
-  margin: .2rem 0;
-  font: 400 1rem var(--fnt-abel);
-  background-color: hsl(15.92deg 76.59% 34.86%);
-  color: var(--font-color);
-  border-radius: .25rem;
-  letter-spacing: .05rem;
+
+@media screen and (max-width: 930px){
+  .game {
+    grid-template-columns: 1fr;
+
+    .game--list {
+      grid-column: 1;
+      grid-row: 3;
+      width: clamp(30vmin, 7vmin, 18rem);
+      height: 9rem;
+      .jump {
+        width: clamp(8rem, 6vmin, 12vmin);
+        padding: 1rem;
+        font-size: clamp(2vmin, 5vmin, .65rem);
+      }
+    }
+  }
 }
