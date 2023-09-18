@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Squares } from '../Squares/Squares';
 import { checkWinner } from '../../utils/check_winner';
 import './Board.css';
@@ -6,7 +6,7 @@ import './Board.css';
 const Board = ({xIsNext, squares, onPlay}) => {
   const indices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-  const handleClick = (i) => {
+  const handleClick = useCallback((i) => {
     if(squares[i] || checkWinner(squares)) return;
 
     const nextSquare = squares.slice()
@@ -16,7 +16,7 @@ const Board = ({xIsNext, squares, onPlay}) => {
       (nextSquare[i] = 'O');
 
       onPlay(nextSquare)
-  }
+  }, [squares])
 
   const winner = checkWinner(squares)
 
